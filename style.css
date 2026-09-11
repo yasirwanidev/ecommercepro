@@ -131,6 +131,7 @@ body {
   display:flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 .userbtn .dropdown{
   display:none;  
@@ -503,7 +504,7 @@ justify-content:center;
   padding: 2px 6px;
   border-radius: 50%;
 }
-@media (max-width: 950px) {
+@media (max-width: 1080px) {
   .navbar ul {
     position: absolute;
     top: 100%;
