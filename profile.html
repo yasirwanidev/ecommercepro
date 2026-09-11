@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container{
+            background:#fff;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            min-height:80vh;
+            margin:0;
+        }
+        .profile-container{
+            background: #fff;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+            text-align:center;
+            width:380px;
+            transition:0.3s ease;
+        }
+        .userprofile{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background-color:tomato;
+            color:#fff;
+            font-size:40px;
+            font-weight:bold;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:0 auto 15px;
+            box-shadow:0 5px 15px rgba(255,99,71,0.5);
+        }
+        h2{
+            margin:10px 0;
+            color:#333;
+            font-size:24px;
+        }
+         p{
+            margin:5px 0 20px;
+            color:#666;
+            font-size:15px;
+        }
+        .btn{
+            display:inline-block;
+            margin:10px 5px;
+            padding:12px 20px;
+            border:none;
+            border-radius:8px;
+            background:tomato;
+            color:#fff;
+            font-size: 15px;
+            cursor:pointer;
+            transition:background 0.3s;
+        }
+        .btn:hover{
+            background:#e85b5b;
+                }
+       .modal{
+        display:none; 
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background:rgba(0,0,0,0.5);
+        align-items:center;
+        justify-content:center;
+        Z-index:1000;
+      } 
+      .modal-content{
+        background:#fff;
+        padding:25px;
+        border-radius:12px;
+        width:320px;
+        text-align:center;
+        animation:fadein 0.3s ease;
+      }
+      @keyframes fadein{
+        from{
+            opacity:0;
+            transition: translateY(-20px);
+        }
+        to{
+            opacity:1;
+            transition: translateY(0);
+
+        }
+      }
+     .modal-content{
+        margin-top:0;
+        color:#333;
+     }
+     .modal-content label{
+        font-size:15px;
+        color:#555;
+     }
+          
+     .modal-content input{
+        width:100%;
+        padding:10px;
+        margin:8px 0 15px;
+        border:1px solid#ccc;
+        border-radius:6px;
+     }
+    .modal-content .modal-actions
+     {
+    text-align:right;
+      }
+    .modal-content button{
+        padding:8px 14px;
+        border:none;
+        border-radius:6px;
+        cursor:pointer;
+        margin-left:5px;
+    }
+    .cancelbtn{
+        background:#ccc;
+        /* color:#fff; */
+    }
+    .savebtn{
+        background:tomato;
+        color:#fff;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/original-983633d1f6de58f5d871f174ff34f057.webp" alt="logo"></a>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">collection</a>
+                <div class="dropdown">
+                        <a href="#">Men</a>
+                        <a href="#">women</a>
+                        <a href="#">Accessories</a>
+                </div>
+            </li>
+            <li><a href="index.html">New arrivals</a></li>
+            <li><a href="index.html">sale</a></li>
+            <li><a href="index.html">contact</a></li>
+            <li><button id="loginbtn" class="but loginlink"><a href="login.html">login</a></button></li>
+        <li id="userMenu" class="usermenu">
+   <button class="userbtn" id="usrbtn">
+    <span class="userprofile" id="user-profile">U</span>
+   </button>
+   <ul class="dropdown" id="dropdownMenu">
+      <li><a href="profile.html">profile</a></li>
+      <li><button id="logoutbtn" class="but logoutbtn">logout</button></li>
+   </ul>
+   </li>
+        </ul>
+        <div class="search-container">
+                <input type="text" placeholder="search fashion...">
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    </nav>
+    <div class="container">
+        <div class="profile-container">
+            <div class="userprofile" id="profileAvator">u</div>
+            <h2 id="ProfileName">Guest</h2>
+            <p class="profileEmail" id="profileEmail">guest@gmail.com</p>
+            <button class="btn" id="editbtn">Edit profile</button>
+            <button class="btn" id="profilelogoutbtn">Logout</button>
+        </div>
+        <div class="modal" id="editcontent">
+                    <div class="modal-content">
+                        <h3>Edit profile</h3>
+                        <label for="editusername">Username</label>
+                        <input type="text" id="editusername"/>
+                        <label for="email">Email</label>
+                        <input type="email" id="editEmail"/>
+                        <label for="password">password</label>
+                        <input type="password" id="editpassword"/>
+                        <div class="modal-actions">
+                        <button class="cancelbtn" id="cancelEdit">cancel</button>
+                        <button class="savebtn" id="saveEdit">save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer>
+                <div class="footer">
+                    <div class="footer-container">
+                        <div class="footer-brand">
+                            <div class="logo">
+                                <img src="images/original-983633d1f6de58f5d871f174ff34f057.webp">
+                            </div>
+                            <p>Trendy styles,Elegent designs,All in one place</p>
+                                <div class="social-links">
+                                    <a href="#"><img src="images/icons8-facebook-48.png" alt="facebook"></a>
+                                    <a href="#"><img src="images/icons8-instagram-logo-48.png" alt="instagram"></a>
+                                    <a href="#"><img src="images/icons8-linkedin-circled-48.png" alt="linkedin"></a>
+                                    <a href="#"><img src="images/icons8-pinterest-logo-48.png" alt="pintrest"></a>
+                                </div>
+                                </div>
+                                <div class="footer-links">
+                                <div class="link-group">
+                                    <h4>shop</h4>
+                                    <a href="#">New arrivals</a>
+                                    <a href="#">Best Seller</a>
+                                    <a href="#">Men</a>
+                                    <a href="#">Women</a>
+                                    <a href="#">Sale</a>
+                                </div>
+                                <div class="link-group">
+                                    <h4>Company</h4>
+                                    <a href="#">About Us</a>
+                                    <a href="#">carrers</a>
+                                    <a href="#">blog</a>
+                                    <a href="#">contact</a>
+                                </div>
+                                 <div class="link-group">
+                                    <h4>Support</h4>
+                                    <a href="#">FAQ</a>
+                                    <a href="#">Shipping</a>
+                                    <a href="#">Returns</a>
+                                    <a href="#">Privacy Policy</a>
+                                </div>
+                                </div>
+                        </div>
+                    <div class="footer-bottom"><p>&copy:2026 All rights reserved</p></div>
+                </div>
+            </footer>
+    <script src="navbar.js"></script>
+    <script>  
+    const profileAvator=document.getElementById("profileAvator");
+    const ProfileName=document.getElementById("ProfileName");
+    const profileEmail=document.getElementById("profileEmail");
+    const editbtn=document.getElementById("editbtn");
+    const logoutbut=document.getElementById("profilelogoutbtn");
+    // modal 
+        const editcontent=document.getElementById("editcontent");
+        const editusername=document.getElementById("editusername");
+        const editEmail=document.getElementById("editEmail");
+        const editpassword=document.getElementById("editpassword");
+        const cancelEdit=document.getElementById("cancelEdit");
+        const saveEdit=document.getElementById("saveEdit");
+      function loadprofile(){
+        const users=JSON.parse(localStorage.getItem("users"));
+        if(users){
+        ProfileName.textContent=users.username || "user";
+        profileEmail.textContent=users.email || "user@gmail.com";
+        profileAvator.textContent=users.username.slice(0,1) || "u";
+      }
+      else{
+         alert("you must login first");
+         window.location.href="login.html";
+      }
+    }
+    const users=JSON.parse(localStorage.getItem("users"));
+    editbtn.addEventListener("click",()=>{
+    if(users){
+      editusername.value=users.username||"";
+      editEmail.value=users.email||"";
+      editpassword.value=users.userpassword||"";
+    }
+    editcontent.style.display="flex";
+     });
+     saveEdit.addEventListener("click",()=>{
+      users.username=editusername.value;
+      users.email=editEmail.value;
+      users.password=editpassword.value;
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("profile updated successfully");
+    editcontent.style.display="none";
+    loadprofile();
+});
+ cancelEdit.addEventListener("click",()=>{
+    editcontent.style.display="none";
+});
+window.addEventListener("click",(e)=>{
+    if(e.target===editcontent)
+    editcontent.style.display="none";
+});
+profilelogoutbtn.addEventListener("click",()=>{
+            localStorage.removeItem("users");
+            alert("logout succesfully");
+            window.location.href="login.html";
+});
+    loadprofile();
+     </script>
+</body>
+</html>

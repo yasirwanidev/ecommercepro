@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/original-983633d1f6de58f5d871f174ff34f057.webp" alt="logo"></a>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+              <li>
+         <a href="#" id="collectionBtn">collection</a>
+        <div class="dropdown" id="collectionDropdown">
+        <a href="index.html?category=men">Men</a> 
+        <a href="index.html?category=women">women</a>
+        <a href="index.html?category=accessories">Accessories</a>
+        </div>
+             </li>
+            <!-- <li><a href="#">collection</a>
+                <div class="dropdown">
+                        <a href="#">Men</a> 
+                        <a href="#">women</a>
+                        <a href="#">Accessories</a>
+                </div>
+            </li> -->
+            <li><a href="index.html">sale</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contactus.html">contact</a></li>
+            <li><button id="loginbtn" class="but loginlink"><a href="login.html">login</a></button></li>
+        <li id="userMenu" class="usermenu">
+   <button class="userbtn" id="usrbtn">
+    <span class="userprofile" id="user-profile">U</span>
+   </button>
+   <a href="cart.html" class="cart-icon">
+     <i class="fa-solid fa-cart-shopping"></i>
+     <span id="cart-count">0</span>
+    </a>
+   <ul class="dropdown" id="dropdownMenu">
+      <li><a href="profile.html">profile</a></li>
+      <li><button id="logoutbtn" class="but logoutbtn">logout</button></li>
+   </ul>
+   </li>
+        </ul>
+        <div class="search-container">
+                <input type="text" placeholder="search fashion...">
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    </nav>
+    <!--hero carousal-->
+<div class="wrap">
+    <div class="carousal">
+        <div class="viewport" id="viewport">
+            <div class="track" id="track">
+                <div class="slide">
+                    <img src="https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg" alt="slide1">
+                    <div class="slide-content">
+                        <h2>summer collection</h2>
+                        <p>Explore the latest trends in fashion</p>
+                       <!-- <a href="#products"> <button>Shop now</button></a> -->
+                <button onclick="window.scrollBy({top:518, behavior: 'smooth'})">Shop now</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80" alt="slide2">
+                    <div class="slide-content">
+                        <h2>summer collection</h2>
+                        <p>Explore the latest trends in fashion</p>
+              <button onclick="window.scrollBy({top: 518, behavior: 'smooth'})">Shop now</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg" alt="slide3">
+                    <div class="slide-content">
+                        <h2>summer collection</h2>
+                        <p>Explore the latest trends in fashion</p>
+            <button onclick="window.scrollBy({top: 518, behavior: 'smooth'})">Shop now</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.pexels.com/photos/932401/pexels-photo-932401.jpeg" alt="slide4">
+                    <div class="slide-content"> 
+                        <h2>summer collection</h2>
+                        <p>Explore the latest trends in fashion</p>
+                    <button onclick="window.scrollBy({top: 518, behavior: 'smooth'})">Shop now</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn prev" id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="btn next" id="next"><i class="fa-solid fa-arrow-right"></i></button>
+
+            <div class="dots" id="dots">
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </div>
+        </div>
+    </div>
+</div>
+         <div class="product-container">
+            <div class="controls">
+            <div id="filters">
+                <button class="filter-btn">all</button>
+                <button class="filter-btn">men clothing</button>
+                <button class="filter-btn">women clothing</button>
+                <button class="filter-btn">jewellery</button>
+            </div>
+             <select id="sort" class="filter-btn">
+                <option value="">sort by</option>
+                <option value="price-asc">price: Low -> high</option>
+                <option value="price-dsc">price: High-> low</option>
+                <option value="name-asc">Name: A -> Z</option>
+                <option value="name-dsc">Name: Z-> A</option>
+                </select>
+            </div>
+            <div class="products" id="products">
+                <!-- <div class="card">
+                    <img src="https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png"alt="product image">
+                     <h3><a href="product.html?id=${p.id}">This is shirt</a></h3>
+                     <p><b>$233</b></p>
+                </div> -->
+            </div>  
+            </div>
+            <footer>
+                <div class="footer">
+                    <div class="footer-container">
+                        <div class="footer-brand">
+                            <div class="logo">
+                                <img src="images/original-983633d1f6de58f5d871f174ff34f057.webp">
+                            </div>
+                            <p>Trendy styles,Elegent designs,All in one place</p>
+                                <div class="social-links">
+                                    <a href="#"><img src="images/icons8-facebook-48.png" alt="facebook"></a>
+                                    <a href="#"><img src="images/icons8-instagram-logo-48.png" alt="instagram"></a>
+                                    <a href="#"><img src="images/icons8-linkedin-circled-48.png" alt="linkedin"></a>
+                                    <a href="#"><img src="images/icons8-pinterest-logo-48.png" alt="pintrest"></a>
+                                </div>
+                                </div>
+                                <div class="footer-links">
+                                <div class="link-group">
+                                    <h4>shop</h4>
+                                    <a href="#">New arrivals</a>
+                                    <a href="#">Best Seller</a>
+                                    <a href="#">Men</a>
+                                    <a href="#">Women</a>
+                                    <a href="#">Sale</a>
+                                </div>
+                                <div class="link-group">
+                                    <h4>Company</h4>
+                                    <a href="aboutus.html">About Us</a>
+                                    <a href="#">carrers</a>
+                                    <a href="#">blog</a>
+                                    <a href="contactus.html">contact</a>
+                                </div>
+                                 <div class="link-group">
+                                    <h4>Support</h4>
+                                    <a href="#">FAQ</a>
+                                    <a href="#">Shipping</a>
+                                    <a href="#">Returns</a>
+                                    <a href="#">Privacy Policy</a>
+                                </div>
+                                </div>
+                        </div>
+                    <div class="footer-bottom"><p>&copy:2026 All rights reserved</p></div>
+                </div>
+            </footer>
+    <script src="navbar.js"></script>
+    <script src="cart.js"></script>
+    <script src="carousal.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>

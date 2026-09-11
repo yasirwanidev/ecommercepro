@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product.html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+   .product-container{
+    max-width:1000px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    background-color:var(--bg-primary);
+    border-radius:12px;
+    box-shadow:0px 8px 20px rgba(0,0,0,0.1);
+    overflow:hidden;
+}
+.product-image{
+    flex:1 1 400px;
+    min-width:300px;
+    background:var(--fg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+.product-image img{
+    max-width:100%;
+    max-width:400px;
+    border-radius:12px;
+    transition:transform 0.3s ease;
+}
+.product-image img:hover{
+    transform:scale(1.05);
+} 
+.product-details{
+    flex: 1 1 400px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    /* justify-content:center; */
+}
+.product-details h1{
+    font-size:2rem;
+    margin-bottom:5px;
+}
+.product-details p{
+    font-size:1rem;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+.product-details .price{
+    font-size:2rem;
+    font-weight:bold;
+    color:var(--primary);
+} 
+.product-details .btn{
+    padding:12px 25px;
+    background:var(--primary);
+    color:#fff;
+    font-size:1rem;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:background 3s ease;
+    width:fit-content;
+}   
+.product-details .btn:hover{
+  background:rgb(243,80,52); 
+}
+#mainproduct{
+    display: contents;
+}
+.heading{
+    max-width:1000px;
+    margin:20px auto;
+    font-family:arial,sans-serif;
+    padding:0.9 rem;
+  }
+.relatedproducts{
+    max-width:1000px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+    padding:10px 30px;
+  }   
+  @media(max-width:1064px){
+    .product-container{
+   flex-direction:column;
+    }
+  .product-image,.product-details{ 
+    flex:1 1 100%;
+  } 
+.product-image img{
+    max-height:350px; 
+} 
+  }
+  @media(max-width:768px){
+   .product-container{
+   flex-direction:column;
+    }
+  .product-details{ 
+    margin:20px;
+  } 
+  .product-details h1{ 
+    font-size:1.5rem;
+  } 
+  .product-details p{ 
+    font-size:0.95rem;
+  } 
+  .product-details price{ 
+    font-size:1.25rem;
+  } 
+  .product-details .btn{ 
+    padding:10px 20px;
+    font-size:0.95rem;
+  } 
+
+.product-image img{
+    padding:20px;
+}
+ .heading{
+    text-align:center;
+ }
+ .relatedproducts{
+    padding:10px;
+    justify-content:center;
+ }
+  }
+
+    </style>
+</head>
+<body>    
+    <!-- <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images\original-983633d1f6de58f5d871f174ff34f057.webp" alt="logo"></a>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">collection</a>
+                <div class="dropdown">
+                        <a href="#">Men</a>
+                        <a href="#">women</a>
+                        <a href="#">Accessories</a>
+                </div>
+            </li>
+            <li><a href="index.html">sale</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contactus.html">contact</a></li>
+            <li><button id="loginbtn" class="but loginlink"><a href="login.html">login</a></button></li>
+        <li>
+   <button class="userbtn" id="usrbtn">
+    <span class="userprofile" id="user-profile">U</span></button>
+   <ul class="dropdown" id="dropdownMenu">
+      <li><a href="index.html">profile</a></li>
+      <li><button id="logoutbtn" class="but logoutbtn">logout</button></li>
+   </ul>
+   </li>
+        </ul>
+        <div class="search-container">
+                <input type="text" placeholder="search fashion...">
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    </nav> -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/original-983633d1f6de58f5d871f174ff34f057.webp" alt="logo"></a>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+    <a href="#" id="collectionBtn">collection</a>
+    <div class="dropdown" id="collectionDropdown">
+        <a href="index.html?category=men">Men</a> 
+        <a href="index.html?category=women">women</a>
+        <a href="index.html?category=accessories">Accessories</a>
+        </div>
+            </li>
+            <li><a href="index.html">sale</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contactus.html">contact</a></li>
+            <li><button id="loginbtn" class="but loginlink"><a href="login.html">login</a></button></li>
+        <li id="userMenu" class="usermenu">
+   <button class="userbtn" id="usrbtn">
+    <span class="userprofile" id="user-profile">U</span>
+   </button>
+           <!-- add to cart -->
+         <a href="cart.html" class="cart-icon">
+         <i class="fa-solid fa-cart-shopping"></i>
+         <span id="cart-count">0</span>
+         </a>
+   <ul class="dropdown" id="dropdownMenu">
+      <li><a href="profile.html">profile</a></li>
+      <li><button id="logoutbtn" class="but logoutbtn">logout</button></li>
+   </ul>
+   </li>
+        </ul>
+        <div class="search-container">
+                <input type="text" placeholder="search fashion...">
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    </nav>
+     <div class="product-container" id="productContainer">
+        <div id="mainproduct"></div>
+        <!-- <div class="product-image" id=productImg >
+        <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png" alt="product-image"/>
+        </div>
+         <div class="product-details">
+            <h1>product title</h1>
+            <p class="price">$999</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vitae atque corporis dolores optio minus nulla tempora nostrum soluta facere. Officia, ut consectetur sint excepturi officiis expedita deserunt enim architecto.</p>
+            <button class="btn" id="Add to cart">Add to cart</button>-->
+    </div> 
+    <div class="error" id="error"></div>
+    <div><h2 class="heading">Realated Products</h2></div>
+    <div id="relatedProducts" class="relatedproducts"></div>
+    </div>
+    <footer>
+                <div class="footer">
+                    <div class="footer-container">
+                        <div class="footer-brand">
+                            <div class="logo">
+                                <img src="images/original-983633d1f6de58f5d871f174ff34f057.webp">
+                            </div>
+                            <p>Trendy styles,Elegent designs,All in one place</p>
+                                <div class="social-links">
+                                    <a href="#"><img src="images/icons8-facebook-48.png" alt="facebook"></a>
+                                    <a href="#"><img src="images/icons8-instagram-logo-48.png" alt="instagram"></a>
+                                    <a href="#"><img src="images/icons8-linkedin-circled-48.png" alt="linkedin"></a>
+                                    <a href="#"><img src="images/icons8-pinterest-logo-48.png" alt="pintrest"></a>
+                                </div>
+                                </div>
+                                <div class="footer-links">
+                                <div class="link-group">
+                                    <h4>shop</h4>
+                                    <a href="#">New arrivals</a>
+                                    <a href="#">Best Seller</a>
+                                    <a href="#">Men</a>
+                                    <a href="#">Women</a>
+                                    <a href="#">Sale</a>
+                                </div>
+                                <div class="link-group">
+                                    <h4>Company</h4>
+                                    <a href="#">About Us</a>
+                                    <a href="#">carrers</a>
+                                    <a href="#">blog</a>
+                                    <a href="#">contact</a>
+                                </div>
+                                 <div class="link-group">
+                                    <h4>Support</h4>
+                                    <a href="#">FAQ</a>
+                                    <a href="#">Shipping</a>
+                                    <a href="#">Returns</a>
+                                    <a href="#">Privacy Policy</a>
+                                </div>
+                                </div>
+                        </div>
+                    <div class="footer-bottom"><p>&copy:2026 All rights reserved</p></div>
+                </div>
+            </footer>
+    <script src="navbar.js"></script>
+    <script src="cart.js"></script>
+    <script>
+    const params=new URLSearchParams(window.location.search);
+    console.log("params:",params.get("id"));
+    const ProductId=params.get("id");
+   let products=[];
+    async function fetchData(){
+         try{
+    let res=await fetch("https://fakestoreapi.com/products");
+     if(!res.ok) throw new Error(`http error!:${res.status}`);
+    let data=await res.json();
+    products=data;
+    const product=products.find((p)=>p.id==ProductId);
+    if(product){
+        displayProduct(product);
+        displayRelatedProduct(product);
+    }else{
+        document.getElementById("error").textContent="product not found";
+    }
+}
+   catch(error){
+   console.log(error);
+   document.getElementById("error").textContent="Error fetching products...." + error.message;
+ }
+ }
+  function  displayProduct(product){
+    const container=document.getElementById("mainproduct");
+    container.innerHTML=`
+        <div class="product-image" >
+        <img src="${product.image}" alt="${product.title}"/>
+        </div>
+        <div class="product-details">
+            <h1>${product.title}</h1>
+            <p class="price">$${product.price}</p>
+            <p>${product.description}</p>
+            <button class="btn" id="Addtocart">Add to cart</button>
+    </div>` 
+    ;
+    // document.getElementById("Addtocart")
+    //         .addEventListener("click",()=>{
+    //     alert(`${product.title}added to cart`)});
+        document.getElementById("Addtocart")
+        .addEventListener("click", () => {
+            addToCart(product);
+            alert(`${product.title} added to cart`);
+        });
+  }
+          function displayRelatedProduct(product)
+          {
+            const relatedcontainer=document.getElementById("relatedProducts");
+            relatedcontainer.innerHTML="";
+            const related=products.filter((p)=>p.category==product.category && p.id!=product.id);
+       related.forEach((p,index)=>{
+       const card=document.createElement("div");
+       card.className="card";
+       card.innerHTML=`<img src="${p.image}"
+                          alt="${p.title}"
+                          >
+                    <h3><a href="product.html?id=${p.id}">${p.title}</a></h3>
+                     <p><b>$${p.price}</b></p>`;
+                     relatedcontainer.append(card);
+                     setTimeout(()=>{
+                      card.classList.add("show");
+                     },index*50);
+                      if(related.length===0){
+                      related.innerHTML=`<p> No Related product found</p>`
+                     }
+    });
+   }
+   fetchData();
+    </script>
+</body>
+</html>

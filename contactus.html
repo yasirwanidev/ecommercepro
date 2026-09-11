@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: 'Outfit';
+    background:linear-gradient(#ffdad5,#ffdad5);
+}
+.contact-container{
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact-left{
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+    gap:20px;
+}
+.contact-left-title h2{
+    font-weight:600px;
+    color:#a363aa;
+    font-size:40px;
+    margin-bottom:25px;
+}
+.contact-left-title hr{
+    border:none;
+    width:120px;
+    height:5px;
+    background-color:#a363aa;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+.inputs-contacts{
+    width:400px;
+    height:50px;
+    border:none;
+    outline:none;
+    padding-left:25px;
+    font-weight:500;
+    color:#666;
+    border-radius:50px;
+}
+.contact-left textarea{
+    height:140px;
+    padding-top:15px;
+    border-radius:20px;
+}
+.inputs-contacts:focus{
+    border:1px solid #ff994f;
+}
+.inputs-contacts::placeholder{
+color:#a9a9a9;
+}
+.contact-left button{
+    display:flex;
+    align-items:center;
+    padding:15px 30px;
+    border-radius:50px;
+    border:none;
+    font-size: 16px;
+    color:#fff;
+    gap:10px;
+    cursor:pointer;
+    background: linear-gradient(270deg,#ff994f,#fa6d86);
+}
+.contact-left button img{
+    height:15px;
+}
+.contact-right img{
+        width:500px;
+}
+@media(max-width:900px){
+    .inputs-contacts{
+        width:80vw;
+    }
+    .contact-right{
+        display:none;
+}
+}
+
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/original-983633d1f6de58f5d871f174ff34f057.webp" alt="logo"></a>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="#"></a>
+                <div class="dropdown">
+                        <a href="#">Men</a>
+                        <a href="#">women</a>
+                        <a href="#">Accessories</a>
+                </div>
+            </li> -->
+            <li><a href="index.html">sale</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contactus.html">contact</a></li>
+            <li><button id="loginbtn" class="but loginlink"><a href="login.html">login</a></button></li>
+        <li id="userMenu" class="usermenu">
+   <button class="userbtn" id="usrbtn">
+    <span class="userprofile" id="user-profile">U</span>
+   </button>
+   <ul class="dropdown" id="dropdownMenu">
+      <li><a href="profile.html">profile</a></li>
+      <li><button id="logoutbtn" class="but logoutbtn">logout</button></li>
+   </ul>
+   </li>
+        </ul>
+        <div class="search-container">
+                <input type="text" placeholder="search fashion...">
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    </nav>
+    <div class="contact-container">
+   <form  action="https://api.web3forms.com/submit" method="POST"class="contact-left">
+     <div class="contact-left-title">
+      <h2>Get in touch</h2>
+        <hr>
+        </div>
+          <input type="hidden" name="access_key" value="b2bf8ea3-c0c9-43af-b09e-5670835e272a">
+        <input type="text" name="name" placeholder="your name" class="inputs-contacts" required/>
+        <input type="email" name="email" placeholder="your email" class="inputs-contacts" required/>
+        <textarea name="message" placeholder="your message" class="inputs-contacts" required></textarea>
+        <button type="submit"  >submit<img src="images/arrow_icon.png"></button>
+   </form>
+   <div class="contact-right">
+    <img src="images/right_img.png" alt="image"> 
+    </div>
+    </div>
+    <footer>
+                <div class="footer">
+                    <div class="footer-container">
+                        <div class="footer-brand">
+                            <div class="logo">
+                                <img src="images/original-983633d1f6de58f5d871f174ff34f057.webp">
+                            </div>
+                            <p>Trendy styles,Elegent designs,All in one place</p>
+                                <div class="social-links">
+                                    <a href="#"><img src="images/icons8-facebook-48.png" alt="facebook"></a>
+                                    <a href="#"><img src="images/icons8-instagram-logo-48.png" alt="instagram"></a>
+                                    <a href="#"><img src="images/icons8-linkedin-circled-48.png" alt="linkedin"></a>
+                                    <a href="#"><img src="images/icons8-pinterest-logo-48.png" alt="pintrest"></a>
+                                </div>
+                                </div>
+                                <div class="footer-links">
+                                <div class="link-group">
+                                    <h4>shop</h4>
+                                    <a href="#">New arrivals</a>
+                                    <a href="#">Best Seller</a>
+                                    <a href="#">Men</a>
+                                    <a href="#">Women</a>
+                                    <a href="#">Sale</a>
+                                </div>
+                                <div class="link-group">
+                                    <h4>Company</h4>
+                                    <a href="aboutus.html">About Us</a>
+                                    <a href="#">carrers</a>
+                                    <a href="#">blog</a>
+                                    <a href="contactus.html">contact</a>
+                                </div>
+                                 <div class="link-group">
+                                    <h4>Support</h4>
+                                    <a href="#">FAQ</a>
+                                    <a href="#">Shipping</a>
+                                    <a href="#">Returns</a>
+                                    <a href="#">Privacy Policy</a>
+                                </div>
+                                </div>
+                        </div>
+                    <div class="footer-bottom"><p>&copy:2026 All rights reserved</p></div>
+                </div>
+            </footer>
+                <script src="navbar.js"></script>
+</body>
+</html>

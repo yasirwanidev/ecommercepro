@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login + register</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-container{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height:100vh;
+            margin:0;
+        }
+        .container{
+            background:#fff;
+            padding:30px;
+            border-radius: 12px;
+            box-shadow:0px 8px 25px rgba(0,0,0,0.2);
+            width:320px;
+        }
+        .tab-buttons{
+            display:flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .tab-buttons button{
+           flex:1;
+           padding:10px;
+           cursor:pointer;
+           background-color: #eee;
+           border:none;
+           outline:none;
+           font-weight:bold;
+           transition:0.3s;
+        }
+        .tab-buttons button.active{
+            background-color:tomato ;
+            color:white;
+        } 
+
+        .tab-buttons button:hover{
+            background-color:tomato;
+            color:white;
+        }
+        form{
+            display:none;
+            flex-direction:column;
+        }
+        form.active{
+            display:flex;
+            flex-direction:column;
+        }
+        input{
+            margin:10px 0;
+            padding:10px;
+            border-radius:6px;
+            border:1px solid #ccc;
+            outline:none;
+        }
+        button.submit-btn{
+            background:tomato;
+            color:white;
+            border:none;
+            padding:12px;
+            border-radius:6px;
+            cursor:pointer;
+            font-weight:bold;
+            margin-top:10px;
+        }
+        button.submit-btn:hover{
+            background:#e85b5b;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">
+            <img src="images/original-983633d1f6de58f5d871f174ff34f057.webp" alt="logo">
+            </a>
+        </div>
+        <div class="tab-buttons">
+            <button id="loginTab" class="active">login</button>
+            <button id="registerTab">register</button>
+</div>
+    <!-- login-form-->
+     <form id="loginForm" class="active">
+        <input type="email" id="loginemail" placeholder="email" required/>
+        <input type="password" id="loginpassword" placeholder="password" required/>
+        <button type="submit" id="submit-btn" class="submit-btn">login</button>
+     </form>
+     <!-- register-form-->
+      <form id="registerForm" >
+        <input type="text" id="regUser" placeholder="Username" required/>
+        <input type="email" id="regEmail" placeholder="E-mail" required/>
+        <input type="password" id="regpassword" placeholder="password" required/>
+        <input type="password" id="regconfirm" placeholder="Confirm-password" required/>
+        <button type="submit" id="submit-btn" class="submit-btn">register</button>
+     </form>
+     </div>
+     </div>
+     <script>
+        const loginTab=document.getElementById("loginTab");
+        const registerTab=document.getElementById("registerTab");
+        const loginForm=document.getElementById("loginForm");
+        const registerForm=document.getElementById("registerForm");
+        loginTab.addEventListener("click",()=>{
+            loginTab.classList.add("active");
+            registerTab.classList.remove("active");
+            loginForm.classList.add("active");
+            registerForm.classList.remove("active");
+        });
+         registerTab.addEventListener("click",()=>{
+            registerTab.classList.add("active");
+            loginTab.classList.remove("active");
+            registerForm.classList.add("active");
+            loginForm.classList.remove("active");
+        });
+        registerForm.addEventListener("submit",(e)=>{
+            e.preventDefault();
+                const username=document.getElementById("regUser").value;
+                const email=document.getElementById("regEmail").value;
+                const password=document.getElementById("regpassword").value;
+                const confirm=document.getElementById("regconfirm").value;
+                if(password!==confirm){
+                alert("Password does not match");
+                return;
+                }
+                const users={username,email,password};
+                localStorage.setItem("users",JSON.stringify(users));
+                alert("Register successfully");
+                registerForm.reset();
+            });
+            loginForm.addEventListener("submit",(e)=>{
+            e.preventDefault();
+                const email=document.getElementById("loginemail").value;
+                const password=document.getElementById("loginpassword").value;
+                const userstored= JSON.parse(localStorage.getItem ("users"));
+                if(userstored && userstored.email===email && userstored.password===password){
+                  alert("login successfully");
+                  window.location.href="index.html";
+                }
+                else{
+                    alert("invalid email or password");
+                }
+                loginForm.reset();
+            });
+            //localStorage.clear();
+        
+     </script>
+</body>
+</html>
